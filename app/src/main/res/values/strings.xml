@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ProyectoIntegradorDMR</string>
+    <string name="btn_registar">REGISTRAR</string>
+    <string name="btn_iniciar">INICIAR SESIÓN</string>
+    <string name="introducir_usuario">Introduce el usuario</string>
+    <string name="introducir_contrasenia">Introduce la contraseña</string>
+    <string name="btn_cancelar">Cancelar</string>
+</resources>
