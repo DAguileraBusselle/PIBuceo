@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoIntegradorDMR">
         <activity
+            android:name=".uwu"
+            android:exported="true" />
+        <activity
+            android:name=".RegistrarActivity"
+            android:exported="true" />
+        <activity
             android:name=".IniciarSesionActivity"
             android:exported="false" />
         <activity

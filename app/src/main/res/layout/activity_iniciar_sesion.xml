@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/margen"
     tools:context=".IniciarSesionActivity">
 
     <FrameLayout
@@ -17,14 +18,14 @@
         android:id="@+id/etUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/introducir_usuario"
         android:layout_above="@+id/etContrasenia"
-        />
+        android:hint="@string/introducir_usuario" />
 
     <EditText
         android:id="@+id/etContrasenia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:hint="@string/introducir_contrasenia"
         android:layout_above="@+id/layoutBotones"
         android:layout_marginTop="12dp"

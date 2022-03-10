@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button btnIniciarSesion;
     Button btnRegistrar;
+    Button btn;
+
+    Intent i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
         btnRegistrar = findViewById(R.id.btnRegistrar);
+        btn = findViewById(R.id.btn);
 
+        btn.setOnClickListener(this);
         btnIniciarSesion.setOnClickListener(this);
         btnRegistrar.setOnClickListener(this);
     }
@@ -31,7 +36,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.equals(btnIniciarSesion)){
-            Intent i = new Intent(this, IniciarSesionActivity.class);
+            i = new Intent(this, IniciarSesionActivity.class);
+            startActivity(i);
+        } else if (v.equals(btn)) {
+            i = new Intent(this, uwu.class);
+            startActivity(i);
+        } else {
+            i = new Intent(this, RegistrarActivity.class);
             startActivity(i);
         }
     }

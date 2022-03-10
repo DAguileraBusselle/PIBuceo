@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "682272020644",
+    "project_id": "proyectointegradordmr",
+    "storage_bucket": "proyectointegradordmr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682272020644:android:5c304444b1a3ed33192e31",
+        "android_client_info": {
+          "package_name": "com.example.proyectointegradordmr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682272020644-ai8kpljceecdvecdt4duehu75ct81577.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7gZUmUfnSZXeuh28EoBZiCQpoJIK-lc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "682272020644-ai8kpljceecdvecdt4duehu75ct81577.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
