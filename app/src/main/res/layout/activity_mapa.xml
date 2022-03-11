@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_chill"
+    android:padding="@dimen/margen_mapa"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MapaActivity">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="50dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/logo"
+        android:layout_height="match_parent"
+        android:layout_above="@id/mapaFragment"
+        android:layout_marginRight="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivLogo"
+        android:text="@string/centro_buceo"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/margen_mapa"
+        android:textSize="20sp"
+        />
+
+    <ImageView
+        android:id="@+id/ivOpciones"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/options"
+        android:layout_marginBottom="15dp"/>
+
+
+    <FrameLayout
+        android:id="@+id/mapaFragment"
+        android:layout_below="@+id/ivOpciones"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+
+
+</RelativeLayout>
+

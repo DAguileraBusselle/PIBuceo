@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.proyectointegradordmr.fragments.LogoFragment;
@@ -21,6 +25,7 @@ public class IniciarSesionActivity extends AppCompatActivity implements View.OnC
 
     EditText etUsuario;
     EditText etContrasenia;
+    ImageView btnVerContra;
 
     Usuario user;
     UsuarioDAO UserDAO;
@@ -32,8 +37,6 @@ public class IniciarSesionActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.FrameLogoIniciar, new LogoFragment()).addToBackStack(null).commit();
-
         db = BuceoDB.getDatabase(this);
         UserDAO = db.UsuarioDAO();
 
@@ -41,10 +44,27 @@ public class IniciarSesionActivity extends AppCompatActivity implements View.OnC
         etContrasenia = findViewById(R.id.etContrasenia);
         btnAceptar = findViewById(R.id.btnAceptar);
         btnCancelar = findViewById(R.id.btnCancelar);
+        btnVerContra = findViewById(R.id.btnVerContraInic);
 
         btnAceptar.setOnClickListener(this);
         btnCancelar.setOnClickListener(this);
 
+
+        btnVerContra.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        etContrasenia.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        etContrasenia.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        break;
+                }
+
+                return true;
+            }
+        });
 
     }
 
@@ -62,15 +82,31 @@ public class IniciarSesionActivity extends AppCompatActivity implements View.OnC
                 if (contra.isEmpty()){
                     Toast.makeText(this, "No ha introducido la contraseña", Toast.LENGTH_SHORT).show();
                 }else{
-                   if(UserDAO.comprobarNombre(nombreCorreo) == null && UserDAO.comprobarCorreo(nombreCorreo) == null) {
-                       Toast.makeText(this, R.string.toast_no_existe, Toast.LENGTH_SHORT).show();
-                       ///
-                       btnAceptar.setBackgroundColor(getResources().getColor(R.color.rosa));
-                   } else if (UserDAO.comprobarSignInNombre(nombreCorreo).equals(contra) || UserDAO.comprobarSignInCorreo(nombreCorreo).equals(contra)) {
-                        Intent i = new Intent(this, uwu.class);
-                        startActivity(i);
+                   if(UserDAO.comprobarNombre(nombreCorreo) != null || UserDAO.comprobarCorreo(nombreCorreo) != null) {
+                       if(UserDAO.comprobarSignInNombre(nombreCorreo) != null) {
+                           if(UserDAO.comprobarSignInNombre(nombreCorreo).equals(contra)) {
+                               user = UserDAO.comprobarNombre(nombreCorreo);
+                               ((BuceoApplication) getApplicationContext()).setUser(user);
+                               Intent i = new Intent(this, MapaActivity.class);
 
-                       //TODO: guardar usuario en myApplication
+                               startActivity(i);
+                           } else {
+                               Toast.makeText(this, R.string.toast_contra_incorrecta, Toast.LENGTH_SHORT).show();
+                           }
+
+                       } else if (UserDAO.comprobarSignInCorreo(nombreCorreo) != null) {
+                           if (UserDAO.comprobarSignInCorreo(nombreCorreo).equals(contra)) {
+                               user = UserDAO.comprobarCorreo(nombreCorreo);
+                               ((BuceoApplication) getApplicationContext()).setUser(user);
+                               Intent i = new Intent(this, MapaActivity.class);
+
+                               startActivity(i);
+                           } else {
+                               Toast.makeText(this, R.string.toast_contra_incorrecta, Toast.LENGTH_SHORT).show();
+                           }
+                       }
+                   } else {
+                       Toast.makeText(this, R.string.toast_no_existe, Toast.LENGTH_SHORT).show();
                    }
                 }
             }

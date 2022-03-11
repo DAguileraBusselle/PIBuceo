@@ -11,7 +11,7 @@
         android:id="@+id/ivLogo"
         android:layout_width="match_parent"
         android:layout_above="@id/tvRegistro"
-        android:src="@drawable/padi_logo"
+        android:src="@drawable/logo"
         android:layout_height="match_parent"/>
 
     <TextView
@@ -44,12 +44,28 @@
             android:layout_height="wrap_content"
             android:hint="@string/introducir_correo" />
 
-        <EditText
-            android:id="@+id/etContraseniaRegistrar"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/introducir_contrasenia"
-            android:inputType="textPassword" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etContraseniaRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/introducir_contrasenia"
+                android:inputType="textPassword"
+                android:layout_weight="0.25"/>
+
+            <ImageView
+                android:id="@+id/btnVerContra"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ver_contra"
+                android:layout_weight="1.9"/>
+
+        </LinearLayout>
+
 
         <EditText
             android:id="@+id/etContraseniaCheck"
@@ -74,7 +90,7 @@
             android:layout_weight="1"
             android:text="@string/btn_cancelar" />
         <View
-            android:layout_width="3dp"
+            android:layout_width="5dp"
             android:layout_height="match_parent"/>
 
         <Button

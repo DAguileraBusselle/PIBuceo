@@ -7,30 +7,49 @@
     android:padding="@dimen/margen"
     tools:context=".IniciarSesionActivity">
 
-    <FrameLayout
-        android:id="@+id/FrameLogoIniciar"
+    <ImageView
+        android:id="@+id/ivLogoInciar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        />
+        android:layout_height="match_parent"
+        android:layout_above="@id/etUsuario"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logo" />
 
     <EditText
         android:id="@+id/etUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etContrasenia"
+        android:layout_above="@+id/llContra"
+        android:layout_marginBottom="20dp"
         android:hint="@string/introducir_usuario" />
 
-    <EditText
-        android:id="@+id/etContrasenia"
+    <LinearLayout
+        android:layout_above="@id/layoutBotones"
+        android:id="@+id/llContra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="@string/introducir_contrasenia"
-        android:layout_above="@+id/layoutBotones"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="24dp"
-        />
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <EditText
+            android:id="@+id/etContrasenia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:hint="@string/introducir_contrasenia"
+            android:inputType="textPassword" />
+
+        <ImageView
+        android:id="@+id/btnVerContraInic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ver_contra"
+        android:layout_weight="1.9"/>
+
+
+    </LinearLayout>
+
+
 
     <LinearLayout
         android:id="@+id/layoutBotones"
@@ -45,6 +64,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/btn_cancelar" />
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="match_parent"/>
 
         <Button
             android:id="@+id/btnAceptar"
