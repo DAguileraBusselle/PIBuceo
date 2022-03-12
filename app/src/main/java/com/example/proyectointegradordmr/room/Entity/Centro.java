@@ -14,12 +14,22 @@ public class Centro {
     public double latitud;
     @ColumnInfo(name = "long")
     public double longitud;
+    @ColumnInfo(name = "imagen")
+    public String imagen;
 
-    public Centro(String nombreCentro, double latitud, double longitud) {
+
+
+
+    public Centro(String nombreCentro, double latitud, double longitud, String imagen) {
         this.nombreCentro = nombreCentro;
         this.latitud = latitud;
         this.longitud = longitud;
+        this.imagen = imagen;
     }
+
+    public int getId() { return id; }
+
+    public String getImagen() { return imagen; }
 
     public String getNombreCentro() {
         return nombreCentro;
