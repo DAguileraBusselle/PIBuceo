@@ -12,6 +12,9 @@ import java.util.List;
 @Dao
 public interface CentroDAO {
 
+    @Query("SELECT * FROM CENTROS_BUCEO WHERE id = :id")
+    public Centro selectCentroById(int id);
+
     @Insert
     public void insertarCentros(Centro centro);
 

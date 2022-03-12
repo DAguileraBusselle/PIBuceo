@@ -169,6 +169,7 @@ public class RegistrarActivity extends AppCompatActivity implements View.OnClick
                     userDAO.insertarUsuario(user);
                     Toast.makeText(this, R.string.user_registrado, Toast.LENGTH_SHORT).show();
 
+                    finish();
                     i = new Intent(this, IniciarSesionActivity.class);
                     startActivity(i);
 

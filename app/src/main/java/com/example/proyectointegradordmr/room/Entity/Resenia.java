@@ -32,6 +32,8 @@ public class Resenia {
         this.desc = desc;
     }
 
+    public int getId() { return id; }
+
     public int getIdCentro() {
         return idCentro;
     }
