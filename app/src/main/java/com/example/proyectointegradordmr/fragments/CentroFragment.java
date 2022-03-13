@@ -10,12 +10,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proyectointegradordmr.MapaFragment;
 import com.example.proyectointegradordmr.R;
 import com.example.proyectointegradordmr.room.DAO.CentroDAO;
+import com.example.proyectointegradordmr.room.DAO.ReseniaDAO;
 import com.example.proyectointegradordmr.room.DB.BuceoDB;
 import com.example.proyectointegradordmr.room.Entity.Centro;
+import com.example.proyectointegradordmr.room.Entity.Resenia;
+import com.example.proyectointegradordmr.rvUtils.ReseniaAdapter;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -29,12 +34,19 @@ public class CentroFragment extends Fragment {
 
     BuceoDB db;
     CentroDAO centroDao;
+    ReseniaDAO reseniaDao;
     Centro centro;
 
     TextView tvNombreCentro;
     ImageView ivImgCentro;
     TextView tvCalif;
     RatingBar rbCalif;
+
+    LinearLayoutManager llm;
+    ReseniaAdapter adapter;
+    RecyclerView rvResenias;
+
+    ArrayList<Resenia> listaResenias;
 
 
     @Override
@@ -44,6 +56,7 @@ public class CentroFragment extends Fragment {
 
         db = BuceoDB.getDatabase(getContext());
         centroDao = db.CentroDAO();
+        reseniaDao = db.ReseniaDAO();
 
         tvNombreCentro = view.findViewById(R.id.tvNombreCentro);
         ivImgCentro = view.findViewById(R.id.ivImgCentro);
@@ -55,6 +68,16 @@ public class CentroFragment extends Fragment {
 
         tvNombreCentro.setText(centro.getNombreCentro());
 
+        rvResenias = view.findViewById(R.id.rvResenias);
+
+        llm = new LinearLayoutManager(getContext());
+        rvResenias.setLayoutManager(llm);
+        listaResenias = (ArrayList<Resenia>) reseniaDao.selectByIdCentro(centro.getId());
+
+        adapter = new ReseniaAdapter(listaResenias);
+        rvResenias.setAdapter(adapter);
+
+        //TODO: hacerlo concatenando el src
         int idImagen=0;
         switch (centro.getImagen()) {
             case "dive_college_centro":

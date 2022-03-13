@@ -15,6 +15,9 @@ public interface ReseniaDAO {
     @Query("SELECT * FROM RESENIAS")
     public List<Resenia> selectAll();
 
+    @Query("SELECT * FROM RESENIAS WHERE id_centro = :idCentro")
+    public List<Resenia> selectByIdCentro(int idCentro);
+
     @Insert
     public void insertarResenia(Resenia resen);
 

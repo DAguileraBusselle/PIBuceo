@@ -36,58 +36,41 @@
 
         <TextView
             android:id="@+id/tvCalifCentro"
-            android:layout_marginRight="3dp"
             android:textSize="35sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:lines="1"
             android:layout_weight="1"/>
 
         <RatingBar
             android:id="@+id/rbCalifCentro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:isIndicator="true"
             android:numStars="5"
             android:layout_weight="1"/>
 
 
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/margen_mapa"
+        android:id="@+id/rvResenias"
+        android:layout_above="@id/llVerInmers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/llCalif"/>
 
     <LinearLayout
         android:layout_centerInParent="true"
-        android:layout_below="@id/llCalif"
-        android:id="@+id/llVerRes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_marginTop="15dp"
-            android:textSize="25sp"
-            android:id="@+id/tvResenias"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_ver_resenias"
-            android:textColor="@color/blue_chiller" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/blue_chiller"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_centerInParent="true"
-        android:layout_below="@id/llVerRes"
         android:id="@+id/llVerInmers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
 
         <TextView
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/margen_mapa"
             android:textSize="23sp"
             android:id="@+id/tvInmersiones"
             android:textColor="@color/blue_chiller"

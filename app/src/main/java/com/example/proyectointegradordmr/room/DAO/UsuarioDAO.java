@@ -17,6 +17,9 @@ public interface UsuarioDAO {
     @Query("SELECT * FROM USUARIOS WHERE id = :id")
     public Usuario selectUserById(int id);
 
+    @Query("SELECT nombreUsuario FROM USUARIOS WHERE id = :id")
+    public String selectNombreById(int id);
+
     @Query("SELECT * FROM USUARIOS WHERE nombreUsuario = :nomUser")
     public Usuario comprobarNombre(String nomUser);
 

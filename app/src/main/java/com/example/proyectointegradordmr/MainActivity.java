@@ -12,10 +12,12 @@ import com.example.proyectointegradordmr.fragments.LogoFragment;
 import com.example.proyectointegradordmr.room.DAO.CentroDAO;
 import com.example.proyectointegradordmr.room.DAO.InmersionDAO;
 import com.example.proyectointegradordmr.room.DAO.ReseniaDAO;
+import com.example.proyectointegradordmr.room.DAO.UsuarioDAO;
 import com.example.proyectointegradordmr.room.DB.BuceoDB;
 import com.example.proyectointegradordmr.room.Entity.Centro;
 import com.example.proyectointegradordmr.room.Entity.Inmersion;
 import com.example.proyectointegradordmr.room.Entity.Resenia;
+import com.example.proyectointegradordmr.room.Entity.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,10 +31,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<Centro> listaCentrosInsert;
     ArrayList<Inmersion> listaInmersionesInsert;
     ArrayList<Resenia> listaReseniaInsert;
+    ArrayList<Usuario> listaUsuarios;
     CentroDAO centroDao;
     BuceoDB db;
     InmersionDAO inmerDao;
     ReseniaDAO reseniaDao;
+    UsuarioDAO userDao;
 
     Intent i;
 
@@ -51,6 +55,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         centroDao = db.CentroDAO();
         inmerDao = db.InmersionDAO();
         reseniaDao = db.ReseniaDAO();
+        userDao = db.UsuarioDAO();
+
+        if(userDao.check().size() == 0) {
+            userDao.insertarUsuario(new Usuario("user1", "texto@de.ejemplo", "1"));
+            userDao.insertarUsuario(new Usuario("user2", "segundo@texto.ejemplo", "2"));
+
+        }
 
         listaCentrosInsert = (ArrayList<Centro>) centroDao.selectAll();
         if (listaCentrosInsert.size() == 0) {
