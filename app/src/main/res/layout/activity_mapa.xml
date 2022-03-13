@@ -11,11 +11,11 @@
     <ImageView
         android:id="@+id/ivLogo"
         android:layout_width="50dp"
-        android:layout_alignParentLeft="true"
-        android:src="@drawable/logo"
         android:layout_height="match_parent"
         android:layout_above="@id/mapaFragment"
-        android:layout_marginRight="5dp"/>
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/logo" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,10 +37,9 @@
 
     <FrameLayout
         android:id="@+id/mapaFragment"
-        android:layout_below="@+id/ivOpciones"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ivOpciones" />
 
 
 

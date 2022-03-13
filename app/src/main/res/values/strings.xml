@@ -24,4 +24,6 @@
     <string name="centro_buceo">Centros de Buceo</string>
     <string name="menu_ajustes">Ajustes</string>
     <string name="menu_cuenta">Cuenta</string>
+    <string name="tv_ver_resenias">Ver reseñas</string>
+    <string name="tv_ver_inmersiones">Ver inmersiones</string>
 </resources>

@@ -71,6 +71,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         reseniaDao.insertarResenia(new Resenia(2, 1, 4.3, "Muy buen centro, pero es muy dificil bucear, la gente es maja, y el equipamiento esta bien cuidado"));
+        reseniaDao.insertarResenia(new Resenia(3, 2, 4.0, "Me dieron un sandwich :>"));
+        reseniaDao.insertarResenia(new Resenia(2, 1, 2.4, "Muy buen centro, pero es muy dificil bucear, la gente es maja, y el equipamiento esta bien cuidado"));
+        reseniaDao.insertarResenia(new Resenia(3, 2, 4.5, "Me dieron un sandwich :>"));
+        reseniaDao.insertarResenia(new Resenia(1, 1, 5, "Muy buen centro, pero es muy dificil bucear, la gente es maja, y el equipamiento esta bien cuidado"));
+        reseniaDao.insertarResenia(new Resenia(3, 2, 3.7, "Me dieron un sandwich :>"));
+        reseniaDao.insertarResenia(new Resenia(4, 1, 4.1, "Muy buen centro, pero es muy dificil bucear, la gente es maja, y el equipamiento esta bien cuidado"));
+        reseniaDao.insertarResenia(new Resenia(2, 2, 3.5, "Me dieron un sandwich :>"));
+        reseniaDao.insertarResenia(new Resenia(4, 1, 3.3, "Muy buen centro, pero es muy dificil bucear, la gente es maja, y el equipamiento esta bien cuidado"));
+        reseniaDao.insertarResenia(new Resenia(2, 2, 4.8, "Me dieron un sandwich :>"));
+        reseniaDao.insertarResenia(new Resenia(1, 1, 4.9, "Muy buen centro, pero es muy dificil bucear, la gente es maja, y el equipamiento esta bien cuidado"));
         reseniaDao.insertarResenia(new Resenia(3, 2, 4.5, "Me dieron un sandwich :>"));
 
 

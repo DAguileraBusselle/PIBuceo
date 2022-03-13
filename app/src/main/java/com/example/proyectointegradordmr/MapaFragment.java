@@ -3,12 +3,14 @@ package com.example.proyectointegradordmr;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.proyectointegradordmr.fragments.CentroFragment;
 import com.example.proyectointegradordmr.room.DAO.CentroDAO;
 import com.example.proyectointegradordmr.room.DB.BuceoDB;
 import com.example.proyectointegradordmr.room.Entity.Centro;
@@ -25,6 +27,7 @@ import java.util.ArrayList;
 
 public class MapaFragment extends Fragment {
 
+    public static final String CLAVE_NOMBRE_CENTRO = "NOMBRE CENTRO";
 
     BuceoDB db;
     CentroDAO centroDao;
@@ -57,7 +60,14 @@ public class MapaFragment extends Fragment {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
                         //TODO: abrir fragmento con detalles del centro
-                        Toast.makeText(getContext(), marker.getTitle(), Toast.LENGTH_SHORT).show();
+                        Bundle args = new Bundle();
+
+
+
+                        args.putString(CLAVE_NOMBRE_CENTRO, marker.getTitle());
+                        CentroFragment centroFragment = new CentroFragment();
+                        centroFragment.setArguments(args);
+                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mapaFragment, centroFragment).addToBackStack(null).commit();
 
                         return true;
                     }

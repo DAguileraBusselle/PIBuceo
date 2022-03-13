@@ -22,7 +22,6 @@ import com.example.proyectointegradordmr.databinding.ActivityMapaBinding;
 public class MapaActivity extends FragmentActivity implements View.OnClickListener {
 
     private GoogleMap mMap;
-    private ActivityMapaBinding binding;
     ImageView btnMenu;
 
     @Override
