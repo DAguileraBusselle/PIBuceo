@@ -26,4 +26,15 @@
     <string name="menu_cuenta">Cuenta</string>
     <string name="tv_ver_resenias">Ver reseñas</string>
     <string name="tv_ver_inmersiones">Ver inmersiones</string>
+    <string name="tv_prof_max">Prof. max.: </string>
+    <string name="tv_prof_med">Prof. media: </string>
+    <string name="tv_temp_ver">Temp. media en Verano: </string>
+    <string name="tv_temp_inv">Temp. media en Invierno: </string>
+    <string name="tv_tiempo_med">Duracion aprox.: </string>
+    <string name="tv_desc_inmers">A destacar:</string>
+    <string name="tv_fauna_inmers">Fauna comun:</string>
+    <string name="grados_celsius">° Celsius</string>
+    <string name="minutos">min</string>
+    <string name="metros">m</string>
+
 </resources>

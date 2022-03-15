@@ -96,12 +96,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         listaInmersionesInsert.clear();
-        listaInmersionesInsert.add(new Inmersion(2, "Viaje al pecio perdido", "Una inmersion de barco hasta un pecio en el fondo, con vistas preciosas de un arrecife", "28m", "24.5m",
-                "35min", "media", "Advanced Open Water", "18grados", "10grados", "barracudas, dorados, chuchos, sardinas"));
-        listaInmersionesInsert.add(new Inmersion(3, "El museo submarino", "Visita una de las vistas mas flipantes del planeta, un terreno submarino lleno de estatuas y esculturas", "20m", "15m",
-                "40min", "baja", "Open Water", "20grados", "15grados", "barracudas, sardinas"));
+        listaInmersionesInsert.add(new Inmersion(1, "Viaje al pecio perdido", "Pecio, arrecife", "28m", "24.5m",
+                "35min", "media", "Advanced Open Water", "18° Celsius", "10° Celsius", "barracudas, dorados, chuchos, sardinas"));
+        listaInmersionesInsert.add(new Inmersion(1, "El museo submarino", "Esculturas, bancos de peces", "20m", "15m",
+                "40min", "baja", "Open Water", "20° Celsius", "15° Celsius", "barracudas, sardinas"));
         listaInmersionesInsert.add(new Inmersion(1, "Pierdete en el mar", "jodete", "800m", "740.546m",
-                "2 años", "tu que crees", "da igual no hace falta ni botella", "0grados", "0grados", "lo que alucines"));
+                "2 años", "tu que crees", "da igual no hace falta ni botella", "0° Celsius", "0° Celsius", "lo que alucines"));
+        listaInmersionesInsert.add(new Inmersion(2, "Viaje al pecio perdido", "Pecio, arrecife", "28m", "24.5m",
+                "35min", "media", "Advanced Open Water", "18° Celsius", "10° Celsius", "barracudas, dorados, chuchos, sardinas"));
+        listaInmersionesInsert.add(new Inmersion(2, "El museo submarino", "Esculturas, bancos de peces", "20m", "15m",
+                "40min", "baja", "Open Water", "20° Celsius", "15° Celsius", "barracudas, sardinas"));
+        listaInmersionesInsert.add(new Inmersion(2, "Pierdete en el mar", "jodete", "800m", "740.546m",
+                "2 años", "tu que crees", "da igual no hace falta ni botella", "0° Celsius", "0° Celsius", "lo que alucines"));
+        listaInmersionesInsert.add(new Inmersion(3, "Viaje al pecio perdido", "Pecio, arrecife", "28m", "24.5m",
+                "35min", "media", "Advanced Open Water", "18° Celsius", "10° Celsius", "barracudas, dorados, chuchos, sardinas"));
+        listaInmersionesInsert.add(new Inmersion(3, "El museo submarino", "Esculturas, bancos de peces", "20m", "15m",
+                "40min", "baja", "Open Water", "20° Celsius", "15° Celsius", "barracudas, sardinas"));
+        listaInmersionesInsert.add(new Inmersion(3, "Pierdete en el mar", "jodete", "800m", "740.546m",
+                "2 años", "tu que crees", "da igual no hace falta ni botella", "0° Celsius", "0° Celsius", "lo que alucines"));
+        listaInmersionesInsert.add(new Inmersion(4, "Viaje al pecio perdido", "Pecio, arrecife", "28m", "24.5m",
+                "35min", "media", "Advanced Open Water", "18° Celsius", "10° Celsius", "barracudas, dorados, chuchos, sardinas"));
+        listaInmersionesInsert.add(new Inmersion(4, "El museo submarino", "Esculturas, bancos de peces", "20m", "15m",
+                "40min", "baja", "Open Water", "20° Celsius", "15° Celsius", "barracudas, sardinas"));
+        listaInmersionesInsert.add(new Inmersion(4, "Pierdete en el mar", "jodete", "800m", "740.546m",
+                "2 años", "tu que crees", "da igual no hace falta ni botella", "0° Celsius", "0° Celsius", "lo que alucines"));
+
+
         inmerDao.insertarInmersiones(listaInmersionesInsert);
 
 

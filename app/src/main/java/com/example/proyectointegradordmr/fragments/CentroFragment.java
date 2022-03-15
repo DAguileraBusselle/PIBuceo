@@ -16,10 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.proyectointegradordmr.MapaFragment;
 import com.example.proyectointegradordmr.R;
 import com.example.proyectointegradordmr.room.DAO.CentroDAO;
+import com.example.proyectointegradordmr.room.DAO.InmersionDAO;
 import com.example.proyectointegradordmr.room.DAO.ReseniaDAO;
 import com.example.proyectointegradordmr.room.DB.BuceoDB;
 import com.example.proyectointegradordmr.room.Entity.Centro;
+import com.example.proyectointegradordmr.room.Entity.Inmersion;
 import com.example.proyectointegradordmr.room.Entity.Resenia;
+import com.example.proyectointegradordmr.rvUtils.InmersionAdapter;
 import com.example.proyectointegradordmr.rvUtils.ReseniaAdapter;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -28,26 +31,32 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class CentroFragment extends Fragment {
+public class CentroFragment extends Fragment implements View.OnClickListener {
 
     BuceoDB db;
     CentroDAO centroDao;
     ReseniaDAO reseniaDao;
+    InmersionDAO inmersDao;
     Centro centro;
 
     TextView tvNombreCentro;
     ImageView ivImgCentro;
     TextView tvCalif;
     RatingBar rbCalif;
+    TextView tvInmerResen;
 
     LinearLayoutManager llm;
-    ReseniaAdapter adapter;
+    ReseniaAdapter resAdapter;
+    InmersionAdapter inmAdapter;
     RecyclerView rvResenias;
 
-    ArrayList<Resenia> listaResenias;
+    Boolean inmersiones = false;
 
+    ArrayList<Resenia> listaResenias;
+    ArrayList<Inmersion> listaInmersiones;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,11 +66,13 @@ public class CentroFragment extends Fragment {
         db = BuceoDB.getDatabase(getContext());
         centroDao = db.CentroDAO();
         reseniaDao = db.ReseniaDAO();
+        inmersDao = db.InmersionDAO();
 
         tvNombreCentro = view.findViewById(R.id.tvNombreCentro);
         ivImgCentro = view.findViewById(R.id.ivImgCentro);
         tvCalif = view.findViewById(R.id.tvCalifCentro);
         rbCalif = view.findViewById(R.id.rbCalifCentro);
+        tvInmerResen = view.findViewById(R.id.tvInmerResen);
 
         String nombreCentro = getArguments().getString(MapaFragment.CLAVE_NOMBRE_CENTRO);
         centro = centroDao.selectCentroByNom(nombreCentro);
@@ -70,12 +81,16 @@ public class CentroFragment extends Fragment {
 
         rvResenias = view.findViewById(R.id.rvResenias);
 
+        tvInmerResen.setOnClickListener(this);
+
         llm = new LinearLayoutManager(getContext());
         rvResenias.setLayoutManager(llm);
         listaResenias = (ArrayList<Resenia>) reseniaDao.selectByIdCentro(centro.getId());
+        listaInmersiones = (ArrayList<Inmersion>) inmersDao.selectByIdCentro(centro.getId());
 
-        adapter = new ReseniaAdapter(listaResenias);
-        rvResenias.setAdapter(adapter);
+        inmAdapter = new InmersionAdapter(listaInmersiones);
+        resAdapter = new ReseniaAdapter(listaResenias);
+        rvResenias.setAdapter(resAdapter);
 
         //TODO: hacerlo concatenando el src
         int idImagen=0;
@@ -106,5 +121,21 @@ public class CentroFragment extends Fragment {
         rbCalif.setRating(califMedia);
 
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        inmersiones = !inmersiones;
+
+        if(inmersiones) {
+
+            rvResenias.setAdapter(inmAdapter);
+
+            tvInmerResen.setText(R.string.tv_ver_resenias);
+        } else {
+            rvResenias.setAdapter(resAdapter);
+
+            tvInmerResen.setText(R.string.tv_ver_inmersiones);
+        }
     }
 }

@@ -31,14 +31,14 @@ public class Inmersion {
     @ColumnInfo(name = "temp_medi_verano")
     public String tempMediVeran;
     @ColumnInfo(name = "temp_medi_invierno")
-    public String getTempMediInv;
+    public String tempMediInv;
     @ColumnInfo(name = "fauna_comun")
     public String faunaComun;
 
     public Inmersion(int idCentro, String nombre, String desc,
                      String profMax, String profMed, String tiempMed,
                      String dif, String tituloRecom, String tempMediVeran,
-                     String getTempMediInv, String faunaComun) {
+                     String tempMediInv, String faunaComun) {
         this.idCentro = idCentro;
         this.nombre = nombre;
         this.desc = desc;
@@ -48,7 +48,7 @@ public class Inmersion {
         this.dif = dif;
         this.tituloRecom = tituloRecom;
         this.tempMediVeran = tempMediVeran;
-        this.getTempMediInv = getTempMediInv;
+        this.tempMediInv = tempMediInv;
         this.faunaComun = faunaComun;
     }
 
@@ -92,8 +92,8 @@ public class Inmersion {
         return tempMediVeran;
     }
 
-    public String getGetTempMediInv() {
-        return getTempMediInv;
+    public String getTempMediInv() {
+        return tempMediInv;
     }
 
     public String getFaunaComun() {

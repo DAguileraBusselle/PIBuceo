@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/margen"
+        android:id="@+id/llNombre"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <TextView
+            android:id="@+id/tvNombreInmers"
+            android:text="Viaje al pecio perdido"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/blue_chill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/margen_mapa"
+            android:layout_height="2dp"
+            android:background="@color/blue_chiller"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/margen"
+        app:layout_constraintTop_toBottomOf="@id/llNombre"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/llProfMax"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_prof_max"/>
+
+        <TextView
+            android:id="@+id/tvProfMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/blue_chilling"
+            android:text="35m"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/margen"
+        app:layout_constraintTop_toBottomOf="@id/llProfMax"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/llProfMed"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_prof_med"/>
+
+        <TextView
+            android:id="@+id/tvProfMed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/blue_chilling"
+            android:text="28m"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/margen"
+        app:layout_constraintTop_toBottomOf="@id/llProfMed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/llTempVer"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_temp_ver"/>
+
+        <TextView
+            android:id="@+id/tvTempVer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/blue_chilling"
+            android:text="20° Celsius"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/margen"
+        app:layout_constraintTop_toBottomOf="@id/llTempVer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/llTempInv"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_temp_inv"/>
+
+        <TextView
+            android:id="@+id/tvTempInv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/blue_chilling"
+            android:text="11° Celsius"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/margen"
+        app:layout_constraintTop_toBottomOf="@id/llTempInv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/llTiempoMed"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_tiempo_med"/>
+
+        <TextView
+            android:id="@+id/tvTiempoMed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/blue_chilling"
+            android:text="35min"/>
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/tv1"
+        android:text="@string/tv_desc_inmers"
+        android:textStyle="bold"
+        android:textColor="@color/blue_chilling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/llTiempoMed"
+        />
+
+
+
+    <TextView
+        android:layout_marginLeft="@dimen/margen"
+        android:id="@+id/tvDescInmers"
+        app:layout_constraintTop_toBottomOf="@id/tv1"
+        android:layout_width="match_parent"
+        android:text="Pecio, arrecife, bancos de peces"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:text="@string/tv_fauna_inmers"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue_chilling"
+        app:layout_constraintTop_toBottomOf="@id/tvDescInmers"
+        />
+
+    <TextView
+        android:layout_marginLeft="@dimen/margen"
+        android:id="@+id/tvFaunaInmers"
+        app:layout_constraintTop_toBottomOf="@id/tv2"
+        android:layout_width="match_parent"
+        android:text="Barracudas, angelotes, chuchos"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_marginTop="@dimen/margen_mapa"
+        android:background="@color/blue_chill"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        app:layout_constraintTop_toBottomOf="@id/tvFaunaInmers"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,14 +11,23 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"/>
+
     <TextView
         android:id="@+id/tvCalifRV"
+        android:text="3.2"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/margen"
+        android:textColor="@color/blue_chiller"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tvNombreUserReseniaRV"
         app:layout_constraintLeft_toLeftOf="parent"/>
+
     <RatingBar
+        android:theme="@style/RatingBar.Blue"
         android:id="@+id/rbCalifRV"
+        android:rating="2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:isIndicator="true"
@@ -27,6 +36,7 @@
         app:layout_constraintLeft_toRightOf="@id/tvCalifRV"/>
 
     <TextView
+        android:layout_marginLeft="@dimen/margen"
         android:id="@+id/tvDescRV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

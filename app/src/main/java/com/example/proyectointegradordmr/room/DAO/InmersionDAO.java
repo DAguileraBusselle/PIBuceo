@@ -17,6 +17,9 @@ public interface InmersionDAO {
     @Query("SELECT * FROM INMERSIONES")
     public List<Inmersion> selectAll();
 
+    @Query("SELECT * FROM INMERSIONES WHERE id_centro = :idCentro")
+    public List<Inmersion> selectByIdCentro(int idCentro);
+
     @Insert
     public void insertarInmersiones(List<Inmersion> listaInmer);
 
