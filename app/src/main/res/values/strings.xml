@@ -24,8 +24,8 @@
     <string name="centro_buceo">Centros de Buceo</string>
     <string name="menu_ajustes">Ajustes</string>
     <string name="menu_cuenta">Cuenta</string>
-    <string name="tv_ver_resenias">Ver reseñas</string>
-    <string name="tv_ver_inmersiones">Ver inmersiones</string>
+    <string name="tv_ver_resenias">VER RESEÑAS</string>
+    <string name="tv_ver_inmersiones">VER INMERSIONES</string>
     <string name="tv_prof_max">Prof. max.: </string>
     <string name="tv_prof_med">Prof. media: </string>
     <string name="tv_temp_ver">Temp. media en Verano: </string>
@@ -36,5 +36,9 @@
     <string name="grados_celsius">° Celsius</string>
     <string name="minutos">min</string>
     <string name="metros">m</string>
+    <string name="tv_escribir_resenia">ESCRIBIR RESEÑA</string>
+    <string name="aceptar">ACEPTAR</string>
+    <string name="fd_btn_aceptar">ACEPTAR</string>
+    <string name="fd_btn_cancelar">CANCELAR</string>
 
 </resources>

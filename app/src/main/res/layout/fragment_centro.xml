@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:padding="@dimen/margen"
+    android:padding="@dimen/margen_mapa"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -16,17 +16,16 @@
         android:text="" />
 
 
-
     <ImageView
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
         android:id="@+id/ivImgCentro"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_below="@id/tvNombreCentro" />
+        android:layout_below="@id/tvNombreCentro"
+        android:layout_marginTop="@dimen/margen_mapa"
+        android:layout_marginBottom="@dimen/margen_mapa" />
 
     <LinearLayout
-        android:layout_below="@id/ivImgCentro"
+        android:layout_below="@id/llEscribirResenia"
         android:id="@+id/llCalif"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
@@ -47,32 +46,54 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:theme="@style/RatingBar.Blue"
-            android:isIndicator="true"
             android:numStars="5"
+            android:isIndicator="true"
             android:layout_weight="1"/>
 
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llEscribirResenia"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical"
+        android:layout_below="@id/ivImgCentro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tvEscribirResenia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_escribir_resenia"
+            android:textColor="@color/blue_chiller"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/blue_chiller"/>
+
+
+    </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="@dimen/margen_mapa"
         android:id="@+id/rvResenias"
-        android:layout_above="@id/llVerInmers"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/llCalif"/>
 
     <LinearLayout
-        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
         android:id="@+id/llVerInmers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_alignParentBottom="true">
+        android:layout_below="@id/ivImgCentro">
 
         <TextView
-            android:layout_marginTop="@dimen/margen_mapa"
-            android:textSize="23sp"
+            android:textSize="18sp"
             android:id="@+id/tvInmerResen"
             android:textColor="@color/blue_chiller"
             android:layout_width="wrap_content"
@@ -88,6 +109,18 @@
     </LinearLayout>
 
 
+    <LinearLayout
+        android:id="@+id/llInmersReses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ivImgCentro">
+
+
+
+
+
+    </LinearLayout>
 
 
 

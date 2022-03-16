@@ -11,6 +11,12 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import com.example.proyectointegradordmr.dialog.OnAceptarReseniaListener;
+import com.example.proyectointegradordmr.fragments.CentroFragment;
+import com.example.proyectointegradordmr.room.DAO.ReseniaDAO;
+import com.example.proyectointegradordmr.room.DB.BuceoDB;
+import com.example.proyectointegradordmr.room.Entity.Resenia;
+import com.example.proyectointegradordmr.rvUtils.ReseniaAdapter;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -19,10 +25,15 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.proyectointegradordmr.databinding.ActivityMapaBinding;
 
-public class MapaActivity extends FragmentActivity implements View.OnClickListener {
+import java.util.ArrayList;
+
+public class MapaActivity extends FragmentActivity implements View.OnClickListener, OnAceptarReseniaListener {
 
     private GoogleMap mMap;
     ImageView btnMenu;
+
+    BuceoDB db;
+    ReseniaDAO resDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +42,9 @@ public class MapaActivity extends FragmentActivity implements View.OnClickListen
 
         btnMenu = findViewById(R.id.ivOpciones);
         btnMenu.setOnClickListener(this);
+
+        db = BuceoDB.getDatabase(this);
+        resDao = db.ReseniaDAO();
 
        /* binding = ActivityMapaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -62,5 +76,15 @@ public class MapaActivity extends FragmentActivity implements View.OnClickListen
 
             menu.show();
         }
+
     }
+
+    @Override
+    public void enviarResenia(double calif, String resenia) {
+        Resenia res = new Resenia(((BuceoApplication) getApplicationContext()).getIdCentro(), ((BuceoApplication) getApplicationContext()).getUser().getId(), calif, resenia);
+        resDao.insertarResenia(res);
+
+    }
+
+
 }
