@@ -4,6 +4,7 @@ package com.example.proyectointegradordmr.room.Entity;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "RESENIAS", foreignKeys = {@ForeignKey(entity = Centro.class,
@@ -12,7 +13,7 @@ import androidx.room.PrimaryKey;
         onDelete = ForeignKey.CASCADE), @ForeignKey(entity = Usuario.class,
         parentColumns = "id",
         childColumns = "id_usuario",
-        onDelete = ForeignKey.CASCADE)})
+        onDelete = ForeignKey.CASCADE)}, indices = {@Index("id_centro"), @Index("id_usuario")})
 public class Resenia {
     @PrimaryKey(autoGenerate = true)
     public int id;

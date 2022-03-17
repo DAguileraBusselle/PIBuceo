@@ -16,7 +16,7 @@ import com.example.proyectointegradordmr.room.Entity.Inmersion;
 import com.example.proyectointegradordmr.room.Entity.Resenia;
 import com.example.proyectointegradordmr.room.Entity.Usuario;
 
-@Database(entities = {Usuario.class, Centro.class, Inmersion.class, Resenia.class}, version = 5)
+@Database(entities = {Usuario.class, Centro.class, Inmersion.class, Resenia.class}, version = 6)
 public abstract class BuceoDB extends RoomDatabase {
     public abstract UsuarioDAO UsuarioDAO();
     public abstract CentroDAO CentroDAO();

@@ -32,6 +32,7 @@ public class RegistrarActivity extends AppCompatActivity implements View.OnClick
     Button btnCancelar;
 
     ImageView btnVerContra;
+    ImageView btnVerContraCheck;
 
     Usuario user;
     UsuarioDAO userDAO;
@@ -57,6 +58,7 @@ public class RegistrarActivity extends AppCompatActivity implements View.OnClick
         btnCancelar.setOnClickListener(this);
 
         btnVerContra = findViewById(R.id.btnVerContra);
+        btnVerContraCheck = findViewById(R.id.btnVerContraCheck);
 
         db = BuceoDB.getDatabase(this);
         userDAO = db.UsuarioDAO();
@@ -78,6 +80,25 @@ public class RegistrarActivity extends AppCompatActivity implements View.OnClick
                         break;
                 }
                 etContra.setSelection(start, end);
+
+                return true;
+            }
+        });
+
+        btnVerContraCheck.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int start = etContraCheck.getSelectionStart();
+                int end = etContraCheck.getSelectionEnd();
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        etContraCheck.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        etContraCheck.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        break;
+                }
+                etContraCheck.setSelection(start, end);
 
                 return true;
             }

@@ -3,12 +3,13 @@ package com.example.proyectointegradordmr.room.Entity;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "INMERSIONES", foreignKeys = {@ForeignKey(entity = Centro.class,
         parentColumns = "id",
         childColumns = "id_centro",
-        onDelete = ForeignKey.CASCADE)})
+        onDelete = ForeignKey.CASCADE)}, indices = {@Index("id_centro")})
 public class Inmersion {
     @PrimaryKey(autoGenerate = true)
     public int id;
