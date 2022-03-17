@@ -43,5 +43,6 @@
     <string name="toast_ya_resenia">Ya ha hecho una reseña para este centro</string>
     <string name="fd_btn_modificar">MODIFICAR</string>
     <string name="fd_btn_eliminar">ELIMINAR</string>
+    <string name="cerrar_sesion">CERRAR SESION</string>
 
 </resources>

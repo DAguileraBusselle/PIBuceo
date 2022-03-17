@@ -1,13 +1,11 @@
 package com.example.proyectointegradordmr;
 
-import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -19,11 +17,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.proyectointegradordmr.fragments.LogoFragment;
 import com.example.proyectointegradordmr.room.DAO.UsuarioDAO;
 import com.example.proyectointegradordmr.room.DB.BuceoDB;
 import com.example.proyectointegradordmr.room.Entity.Usuario;
-import com.google.android.material.badge.BadgeUtils;
 
 public class RegistrarActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -71,6 +67,8 @@ public class RegistrarActivity extends AppCompatActivity implements View.OnClick
         btnVerContra.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                int start = etContra.getSelectionStart();
+                int end = etContra.getSelectionEnd();
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         etContra.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
@@ -79,6 +77,7 @@ public class RegistrarActivity extends AppCompatActivity implements View.OnClick
                         etContra.setTransformationMethod(PasswordTransformationMethod.getInstance());
                         break;
                 }
+                etContra.setSelection(start, end);
 
                 return true;
             }

@@ -128,10 +128,15 @@ public class CentroFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
+
+
     @Override
     public void onClick(View v) {
         if(v.equals(tvInmerResen)) {
             inmersiones = !inmersiones;
+
+            listaResenias = (ArrayList<Resenia>) reseniaDao.selectByIdCentro(centro.getId());
+            listaInmersiones = (ArrayList<Inmersion>) inmersDao.selectByIdCentro(centro.getId());
 
             if(inmersiones) {
 
@@ -156,5 +161,4 @@ public class CentroFragment extends Fragment implements View.OnClickListener {
 
         }
     }
-
 }

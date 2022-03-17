@@ -69,6 +69,9 @@ public class MapaActivity extends FragmentActivity implements View.OnClickListen
                     if (item.getItemId() == R.id.menuResenias) {
                         Intent i = new Intent(MapaActivity.this, MisReseniasActivity.class);
                         startActivity(i);
+                    } else {
+                        Intent i = new Intent(MapaActivity.this, MiCuentaActivity.class);
+                        startActivity(i);
                     }
 
 

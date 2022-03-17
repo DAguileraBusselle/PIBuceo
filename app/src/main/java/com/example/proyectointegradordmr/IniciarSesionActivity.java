@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.proyectointegradordmr.fragments.LogoFragment;
 import com.example.proyectointegradordmr.room.DAO.UsuarioDAO;
 import com.example.proyectointegradordmr.room.DB.BuceoDB;
 import com.example.proyectointegradordmr.room.Entity.Usuario;

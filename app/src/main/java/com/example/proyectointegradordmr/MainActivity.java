@@ -1,14 +1,12 @@
 package com.example.proyectointegradordmr;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.RoomDatabase;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.proyectointegradordmr.fragments.LogoFragment;
 import com.example.proyectointegradordmr.room.DAO.CentroDAO;
 import com.example.proyectointegradordmr.room.DAO.InmersionDAO;
 import com.example.proyectointegradordmr.room.DAO.ReseniaDAO;
@@ -20,7 +18,6 @@ import com.example.proyectointegradordmr.room.Entity.Resenia;
 import com.example.proyectointegradordmr.room.Entity.Usuario;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -45,8 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.FrameLogoMain, new LogoFragment()).addToBackStack(null).commit();
-        
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
         btnRegistrar = findViewById(R.id.btnRegistrar);
         btn = findViewById(R.id.btn);

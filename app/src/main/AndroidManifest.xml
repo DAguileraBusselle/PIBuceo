@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoIntegradorDMR">
         <activity
+            android:name=".MiCuentaActivity"
+            android:exported="true" />
+        <activity
             android:name=".MisReseniasActivity"
             android:exported="true" />
         <!--
