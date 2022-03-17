@@ -19,7 +19,6 @@ import java.util.ArrayList;
 public class ReseniaAdapter extends RecyclerView.Adapter<ReseniaAdapter.ReseniaVH> {
 
     private ArrayList<Resenia> listaResenias;
-    private View.OnClickListener listener;
 
     public ReseniaAdapter(ArrayList<Resenia> datos){this.listaResenias = datos;}
 

@@ -44,7 +44,6 @@ import java.util.Map;
 
 public class CentroFragment extends Fragment implements View.OnClickListener {
 
-    public static final String CLAVE_ID_CENTRO = "ID CENTRO";
     BuceoDB db;
     CentroDAO centroDao;
     ReseniaDAO reseniaDao;
@@ -57,7 +56,6 @@ public class CentroFragment extends Fragment implements View.OnClickListener {
     RatingBar rbCalif;
     TextView tvInmerResen;
     TextView btnEscribirRes1;
-    ImageView btnEscribirRes2;
 
     LinearLayoutManager llm;
     ReseniaAdapter resAdapter;
@@ -117,7 +115,9 @@ public class CentroFragment extends Fragment implements View.OnClickListener {
             Drawable imagen = ContextCompat.getDrawable(getContext().getApplicationContext(), imageResource);
             ivImgCentro.setImageDrawable(imagen);
 
-        }Float califMedia = centroDao.selectMediaCalifCentro(centro.getId());
+        }
+
+        Float califMedia = centroDao.selectMediaCalifCentro(centro.getId());
 
         if(califMedia == null) {
             califMedia = 0f;

@@ -38,10 +38,8 @@ public class MiReseniaDialog extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        // Construimos el Dialog que retorna el método
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        // creamos la vista para poder referenciar los componentes
         View v = getActivity().getLayoutInflater()
                 .inflate(R.layout.resenia_dialog, null);
         tvNombre = v.findViewById(R.id.tvNombreCali);
@@ -53,28 +51,20 @@ public class MiReseniaDialog extends DialogFragment {
         resDao = db.ReseniaDAO();
         centroDao = db.CentroDAO();
 
-        // le asignamos el layout que hemos definido
         builder.setView(v);
 
-
-        // PARA EVITAR QUE SE CIERRE TRAS EL CONTROL DE DATOS (PARTE 1):
-        // anular el listener del PositiveButton
         builder.setPositiveButton(R.string.fd_btn_modificar,null)
                 .setNeutralButton(R.string.fd_btn_cancelar,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                // Cancelar > cerrar el cuadro de diálogo
                                 dialog.dismiss();
-                                // dialog.cancel();
                             }
                         })
                 .setNegativeButton(R.string.fd_btn_eliminar, null);
 
-        // para que no se cierre si se pincha fuera del dialogo
         AlertDialog ad = builder.create();
         ad.setCanceledOnTouchOutside(false);
 
-        // PARA EVITAR QUE SE CIERRE TRAS EL CONTROL DE DATOS (PARTE 2)
         ad.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
             public void onShow(DialogInterface dialog) {
@@ -95,7 +85,6 @@ public class MiReseniaDialog extends DialogFragment {
                 });
                 Button btnModif = ((AlertDialog)dialog).getButton(AlertDialog.BUTTON_POSITIVE);
                 btnModif.setOnClickListener(new View.OnClickListener() {
-
 
                     @Override
                     public void onClick(View view) {

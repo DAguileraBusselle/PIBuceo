@@ -17,8 +17,7 @@ import com.example.proyectointegradordmr.room.Entity.Resenia;
 
 import java.util.ArrayList;
 
-public class InmersionAdapter extends RecyclerView.Adapter<InmersionAdapter.InmersVH>
-        implements View.OnClickListener {
+public class InmersionAdapter extends RecyclerView.Adapter<InmersionAdapter.InmersVH> {
 
     private ArrayList<Inmersion> listaInmers;
     private View.OnClickListener listener;
@@ -30,7 +29,6 @@ public class InmersionAdapter extends RecyclerView.Adapter<InmersionAdapter.Inme
     public InmersionAdapter.InmersVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.inmers_layout, parent, false);
-        v.setOnClickListener(this);
         InmersionAdapter.InmersVH vh = new InmersionAdapter.InmersVH(v);
         return vh;
     }
@@ -44,18 +42,7 @@ public class InmersionAdapter extends RecyclerView.Adapter<InmersionAdapter.Inme
     public int getItemCount() {
         return listaInmers.size();}
 
-    public void setListener (View.OnClickListener listener){
-        this.listener = listener;
-    }
 
-    @Override
-    public void onClick (View v){
-        if (listener != null) {
-            listener.onClick(v);
-
-        }
-    }
-    //Este metodo coge los atributos del layout skin_layout
     public class InmersVH extends RecyclerView.ViewHolder {
         TextView tvNombre, tvProfMax, tvProfMed, tvTempVer, tvTempInv, tvTiempo, tvDesc, tvFauna;
 

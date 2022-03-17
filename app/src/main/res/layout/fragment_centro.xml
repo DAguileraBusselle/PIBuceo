@@ -85,7 +85,7 @@
         android:id="@+id/rvResenias"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/llVerInmers"/>
+        android:layout_below="@id/llVerInmers" />
 
     <LinearLayout
         android:layout_alignParentLeft="true"

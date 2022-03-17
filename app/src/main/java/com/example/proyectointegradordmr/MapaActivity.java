@@ -74,8 +74,6 @@ public class MapaActivity extends FragmentActivity implements View.OnClickListen
                         startActivity(i);
                     }
 
-
-
                     return true;
                 }
             });

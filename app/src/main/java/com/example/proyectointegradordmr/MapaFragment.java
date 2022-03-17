@@ -40,9 +40,6 @@ public class MapaFragment extends Fragment {
 
         SupportMapFragment smf = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapa);
 
-
-
-
         smf.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap googleMap) {
@@ -59,7 +56,6 @@ public class MapaFragment extends Fragment {
                 googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
-                        //TODO: abrir fragmento con detalles del centro
                         Bundle args = new Bundle();
 
                         args.putString(CLAVE_NOMBRE_CENTRO, marker.getTitle());

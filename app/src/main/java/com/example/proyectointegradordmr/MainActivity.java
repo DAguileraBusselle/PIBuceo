@@ -53,12 +53,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listaUsuarios = (ArrayList<Usuario>) userDao.check();
 
         if(listaUsuarios.size() == 0) {
-            userDao.insertarUsuario(new Usuario("deepExplorer96", "texto@de.ejemplo", "1"));
-            userDao.insertarUsuario(new Usuario("Ground_Cero", "segundo@texto.ejemplo", "2"));
-            userDao.insertarUsuario(new Usuario("Rivas12", "tercer@texto.ejemplo", "3"));
-            userDao.insertarUsuario(new Usuario("BLANDIC", "cuarto@texto.ejemplo", "4"));
-            userDao.insertarUsuario(new Usuario("OceanOAzUl3", "quinto@texto.ejemplo", "5"));
-            userDao.insertarUsuario(new Usuario("1", "sexto@texto.ejemplo", "1"));
+            userDao.insertarUsuario(new Usuario("deepExplorer96", "intoTheDeep@outlook.com", "32wrefgg"));
+            userDao.insertarUsuario(new Usuario("Ground_Cero", "powdavyd@gmail.com", "ewewewe"));
+            userDao.insertarUsuario(new Usuario("Rivas12", "rivas@hotmail.es", "queguaPoSoy666"));
+            userDao.insertarUsuario(new Usuario("BLANDIC", "MartaDIgames@gmail.com", "contrasenia"));
+            userDao.insertarUsuario(new Usuario("OceanOAzUl3", "oceano@yahoo.es", "5"));
+            userDao.insertarUsuario(new Usuario("noTengoNOmbre", "menosCorreo@hotmail.com", "tampocoContrasenia"));
             userDao.insertarUsuario(new Usuario("SebSez","sebastiansaez@yahoo.es","s43Zz"));
             userDao.insertarUsuario(new Usuario("GalvanDiver","ericagalvan@hotmail.com","3RiKa"));
             userDao.insertarUsuario(new Usuario("sSergiSs","sergiseg2020@gmail.com","seg0920"));
