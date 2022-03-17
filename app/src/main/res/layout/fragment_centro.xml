@@ -17,15 +17,18 @@
 
 
     <ImageView
+        android:adjustViewBounds="true"
         android:id="@+id/ivImgCentro"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tvNombreCentro"
         android:layout_marginTop="@dimen/margen_mapa"
         android:layout_marginBottom="@dimen/margen_mapa" />
 
     <LinearLayout
-        android:layout_below="@id/llEscribirResenia"
+        android:layout_below="@id/ivImgCentro"
         android:id="@+id/llCalif"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
@@ -56,7 +59,7 @@
         android:id="@+id/llEscribirResenia"
         android:layout_alignParentRight="true"
         android:orientation="vertical"
-        android:layout_below="@id/ivImgCentro"
+        android:layout_below="@id/llCalif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
@@ -82,7 +85,7 @@
         android:id="@+id/rvResenias"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/llCalif"/>
+        android:layout_below="@id/llVerInmers"/>
 
     <LinearLayout
         android:layout_alignParentLeft="true"
@@ -90,7 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@id/ivImgCentro">
+        android:layout_below="@id/llCalif">
 
         <TextView
             android:textSize="18sp"

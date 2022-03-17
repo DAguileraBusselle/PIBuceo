@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/margen"
+    android:background="@color/blue_chillest"
     tools:context=".IniciarSesionActivity">
 
     <ImageView
@@ -13,7 +14,7 @@
         android:layout_height="match_parent"
         android:layout_above="@id/etUsuario"
         android:layout_alignParentTop="true"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo2" />
 
     <EditText
         android:id="@+id/etUsuario"
@@ -21,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/llContra"
         android:layout_marginBottom="20dp"
-        android:nextFocusDown="@id/etContrasenia"
-        android:hint="@string/introducir_usuario" />
+        android:hint="@string/introducir_usuario"
+        android:nextFocusDown="@id/etContrasenia" />
 
     <LinearLayout
         android:layout_above="@id/layoutBotones"
@@ -36,6 +37,7 @@
             android:id="@+id/etContrasenia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:layout_weight="0.25"
             android:hint="@string/introducir_contrasenia"
             android:inputType="textPassword" />

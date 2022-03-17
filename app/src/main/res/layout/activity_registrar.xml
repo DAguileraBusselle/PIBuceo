@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/margen"
+    android:background="@color/blue_chillest"
     tools:context=".RegistrarActivity">
 
     <ImageView
         android:id="@+id/ivLogo"
         android:layout_width="match_parent"
         android:layout_above="@id/tvRegistro"
-        android:src="@drawable/logo"
+        android:src="@drawable/logo2"
         android:layout_height="match_parent"/>
 
     <TextView

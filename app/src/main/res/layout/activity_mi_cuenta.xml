@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,10 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
+        android:layout_below="@id/ivAvatares"
         android:textStyle="bold"
-        android:textSize="25sp"
+
+        android:textSize="45sp"
         android:text="Rivas12"
-        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
@@ -23,15 +24,24 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="20sp"
+        android:layout_below="@id/tvNombreCuenta"
         android:text="rivas@gmail.com"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombreCuenta"
         />
+
+    <ImageView
+        android:id="@+id/ivAvatares"
+        android:adjustViewBounds="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/avatares" />
 
     <Button
         android:id="@+id/btnCerrarSesion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/cerrar_sesion"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_alignParentBottom="true"
         />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
