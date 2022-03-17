@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button btnIniciarSesion;
     Button btnRegistrar;
-    Button btn;
 
     ArrayList<Centro> listaCentrosInsert;
     ArrayList<Inmersion> listaInmersionesInsert;
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
         btnRegistrar = findViewById(R.id.btnRegistrar);
-        btn = findViewById(R.id.btn);
 
         db = BuceoDB.getDatabase(this);
         centroDao = db.CentroDAO();
@@ -177,7 +175,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
-        btn.setOnClickListener(this);
         btnIniciarSesion.setOnClickListener(this);
         btnRegistrar.setOnClickListener(this);
 
@@ -187,13 +184,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v.equals(btnIniciarSesion)){
             i = new Intent(this, IniciarSesionActivity.class);
-            startActivity(i);
-        } else if (v.equals(btn)) {
-            i = new Intent(this, uwu.class);
-            startActivity(i);
         } else {
             i = new Intent(this, RegistrarActivity.class);
-            startActivity(i);
         }
+        startActivity(i);
+
     }
 }

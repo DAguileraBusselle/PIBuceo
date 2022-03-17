@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/llContra"
         android:layout_marginBottom="20dp"
+        android:nextFocusDown="@id/etContrasenia"
         android:hint="@string/introducir_usuario" />
 
     <LinearLayout

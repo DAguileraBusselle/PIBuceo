@@ -42,9 +42,6 @@
             android:label="@string/title_activity_mapa"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".uwu"
-            android:exported="true" />
-        <activity
             android:name=".RegistrarActivity"
             android:exported="true" />
         <activity

@@ -52,6 +52,8 @@ public class IniciarSesionActivity extends AppCompatActivity implements View.OnC
         btnVerContra.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                int start = etContrasenia.getSelectionStart();
+                int end = etContrasenia.getSelectionEnd();
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         etContrasenia.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
@@ -60,6 +62,8 @@ public class IniciarSesionActivity extends AppCompatActivity implements View.OnC
                         etContrasenia.setTransformationMethod(PasswordTransformationMethod.getInstance());
                         break;
                 }
+
+                etContrasenia.setSelection(start, end);
 
                 return true;
             }
