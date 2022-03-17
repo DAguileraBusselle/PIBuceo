@@ -22,8 +22,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="toast_contra_incorrecta">Contraseña incorrecta</string>
     <string name="centro_buceo">Centros de Buceo</string>
-    <string name="menu_ajustes">Ajustes</string>
-    <string name="menu_cuenta">Cuenta</string>
+    <string name="menu_resenias">Mis reseñas</string>
+    <string name="menu_cuenta">Mi cuenta</string>
     <string name="tv_ver_resenias">VER RESEÑAS</string>
     <string name="tv_ver_inmersiones">VER INMERSIONES</string>
     <string name="tv_prof_max">Prof. max.: </string>
@@ -41,5 +41,7 @@
     <string name="fd_btn_aceptar">ACEPTAR</string>
     <string name="fd_btn_cancelar">CANCELAR</string>
     <string name="toast_ya_resenia">Ya ha hecho una reseña para este centro</string>
+    <string name="fd_btn_modificar">MODIFICAR</string>
+    <string name="fd_btn_eliminar">ELIMINAR</string>
 
 </resources>

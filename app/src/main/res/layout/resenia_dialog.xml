@@ -4,13 +4,19 @@
     android:layout_height="match_parent"
     android:padding="@dimen/margen">
 
+    <TextView
+        android:id="@+id/tvNombreCali"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/tvCali"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_alignParentLeft="true"
-    android:layout_alignParentTop="true"
+    android:layout_below="@+id/tvNombreCali"
     android:text="0.0"
     android:textColor="@color/blue_chiller"
     android:textSize="39sp" />
@@ -21,6 +27,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_toRightOf="@+id/tvCali"
+        android:layout_below="@id/tvNombreCali"
     android:theme="@style/RatingBar.Blue"
 
         />

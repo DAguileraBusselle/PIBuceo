@@ -49,4 +49,12 @@ public class Resenia {
     public String getDesc() {
         return desc;
     }
+
+    public void setCalif(double calif) {
+        this.calif = calif;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 }

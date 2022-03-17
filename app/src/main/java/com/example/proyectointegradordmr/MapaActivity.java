@@ -3,6 +3,7 @@ package com.example.proyectointegradordmr;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,14 +50,6 @@ public class MapaActivity extends FragmentActivity implements View.OnClickListen
         resDao = db.ReseniaDAO();
         centroDao = db.CentroDAO();
 
-       /* binding = ActivityMapaBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.mapa);
-        mapFragment.getMapAsync(this); */
-
         Fragment fragment = new MapaFragment();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.mapaFragment, fragment).commit();
@@ -73,6 +66,13 @@ public class MapaActivity extends FragmentActivity implements View.OnClickListen
             menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
+                    if (item.getItemId() == R.id.menuResenias) {
+                        Intent i = new Intent(MapaActivity.this, MisReseniasActivity.class);
+                        startActivity(i);
+                    }
+
+
+
                     return true;
                 }
             });
