@@ -62,8 +62,6 @@ public class MapaFragment extends Fragment {
                         //TODO: abrir fragmento con detalles del centro
                         Bundle args = new Bundle();
 
-
-
                         args.putString(CLAVE_NOMBRE_CENTRO, marker.getTitle());
                         CentroFragment centroFragment = new CentroFragment();
                         centroFragment.setArguments(args);

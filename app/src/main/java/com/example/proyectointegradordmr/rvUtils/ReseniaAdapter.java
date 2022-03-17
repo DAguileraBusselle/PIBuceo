@@ -16,8 +16,7 @@ import com.example.proyectointegradordmr.room.Entity.Resenia;
 
 import java.util.ArrayList;
 
-public class ReseniaAdapter extends RecyclerView.Adapter<ReseniaAdapter.ReseniaVH>
-            implements View.OnClickListener {
+public class ReseniaAdapter extends RecyclerView.Adapter<ReseniaAdapter.ReseniaVH> {
 
     private ArrayList<Resenia> listaResenias;
     private View.OnClickListener listener;
@@ -29,7 +28,6 @@ public class ReseniaAdapter extends RecyclerView.Adapter<ReseniaAdapter.ReseniaV
     public ReseniaVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.resenia_layout, parent, false);
-        v.setOnClickListener(this);
         ReseniaVH vh = new ReseniaVH(v);
         return vh;
     }
@@ -43,18 +41,7 @@ public class ReseniaAdapter extends RecyclerView.Adapter<ReseniaAdapter.ReseniaV
     public int getItemCount() {
         return listaResenias.size();}
 
-    public void setListener (View.OnClickListener listener){
-        this.listener = listener;
-    }
 
-    @Override
-    public void onClick (View v){
-        if (listener != null) {
-            listener.onClick(v);
-
-        }
-    }
-    //Este metodo coge los atributos del layout skin_layout
     public class ReseniaVH extends RecyclerView.ViewHolder {
 
         TextView tvNombreUser;
@@ -83,6 +70,8 @@ public class ReseniaAdapter extends RecyclerView.Adapter<ReseniaAdapter.ReseniaV
             tvCalif.setText(String.valueOf(resenia.getCalif()));
             rbCalif.setRating((float) resenia.getCalif());
             tvDesc.setText(resenia.getDesc());
+
+
 
         }
     }

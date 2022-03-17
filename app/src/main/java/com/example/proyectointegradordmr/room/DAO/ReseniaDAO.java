@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import com.example.proyectointegradordmr.room.Entity.Resenia;
+import com.example.proyectointegradordmr.room.Entity.Usuario;
 
 import java.util.List;
 
@@ -23,4 +24,9 @@ public interface ReseniaDAO {
 
     @Delete
     public void deleteResenia(List<Resenia> listaResenias);
+
+    @Query("SELECT * FROM RESENIAS WHERE id_centro = :idCentro AND id_usuario = :idUser")
+    public Usuario comprobarRes(int idCentro, int idUser);
+
+
 }

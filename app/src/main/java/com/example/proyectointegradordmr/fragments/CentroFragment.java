@@ -2,6 +2,7 @@ package com.example.proyectointegradordmr.fragments;
 
 import static androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_CLOSE;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -107,32 +109,20 @@ public class CentroFragment extends Fragment implements View.OnClickListener {
         resAdapter = new ReseniaAdapter(listaResenias);
         rvResenias.setAdapter(resAdapter);
 
-        //TODO: hacerlo concatenando el src
-        int idImagen=0;
-        switch (centro.getImagen()) {
-            case "dive_college_centro":
-                idImagen = R.drawable.dive_college_centro;
-                break;
-            case "la_graciosa_centro":
-                idImagen = R.drawable.la_graciosa_centro;
-                break;
-            case "ocean_addicts_centro":
-                idImagen = R.drawable.ocean_addicts_centro;
-                break;
-            case "revolution_dive_centro":
-                idImagen = R.drawable.revolution_dive_centro;
-                break;
-        }
 
 
-        ivImgCentro.setImageResource(idImagen);
+        String uri = "@drawable/"+ centro.getImagen();
+        int imageResource = getResources().getIdentifier(uri, null, getContext().getPackageName());
+        if (imageResource != 0) {
+            Drawable imagen = ContextCompat.getDrawable(getContext().getApplicationContext(), imageResource);
+            ivImgCentro.setImageDrawable(imagen);
 
-        Float califMedia = centroDao.selectMediaCalifCentro(centro.getId());
+        }Float califMedia = centroDao.selectMediaCalifCentro(centro.getId());
 
         if(califMedia == null) {
             califMedia = 0f;
         }
-        tvCalif.setText(String.valueOf(califMedia));
+        tvCalif.setText(String.valueOf((double) Math.round(califMedia * 100)/100));
         rbCalif.setRating(califMedia);
 
         return view;
@@ -154,9 +144,15 @@ public class CentroFragment extends Fragment implements View.OnClickListener {
                 tvInmerResen.setText(R.string.tv_ver_inmersiones);
             }
         } else {
-            ReseniaDialog dialog = new ReseniaDialog();
-            dialog.setCancelable(false);
-            dialog.show(getActivity().getSupportFragmentManager(), "ReseniaDialog");
+
+            if(reseniaDao.comprobarRes(((BuceoApplication) getActivity().getApplicationContext()).getIdCentro(), ((BuceoApplication) getActivity().getApplicationContext()).getUser().getId()) == null) {
+                ReseniaDialog dialog = new ReseniaDialog();
+                dialog.setCancelable(false);
+                dialog.show(getActivity().getSupportFragmentManager(), "ReseniaDialog");
+            } else {
+                Toast.makeText(getContext(), R.string.toast_ya_resenia, Toast.LENGTH_SHORT).show();
+            }
+
 
         }
     }

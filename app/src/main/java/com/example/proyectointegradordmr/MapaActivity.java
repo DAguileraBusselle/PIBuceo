@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.proyectointegradordmr.dialog.OnAceptarReseniaListener;
 import com.example.proyectointegradordmr.fragments.CentroFragment;
+import com.example.proyectointegradordmr.room.DAO.CentroDAO;
 import com.example.proyectointegradordmr.room.DAO.ReseniaDAO;
 import com.example.proyectointegradordmr.room.DB.BuceoDB;
 import com.example.proyectointegradordmr.room.Entity.Resenia;
@@ -34,6 +35,7 @@ public class MapaActivity extends FragmentActivity implements View.OnClickListen
 
     BuceoDB db;
     ReseniaDAO resDao;
+    CentroDAO centroDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class MapaActivity extends FragmentActivity implements View.OnClickListen
 
         db = BuceoDB.getDatabase(this);
         resDao = db.ReseniaDAO();
+        centroDao = db.CentroDAO();
 
        /* binding = ActivityMapaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -83,6 +86,13 @@ public class MapaActivity extends FragmentActivity implements View.OnClickListen
     public void enviarResenia(double calif, String resenia) {
         Resenia res = new Resenia(((BuceoApplication) getApplicationContext()).getIdCentro(), ((BuceoApplication) getApplicationContext()).getUser().getId(), calif, resenia);
         resDao.insertarResenia(res);
+
+        Bundle args = new Bundle();
+
+        args.putString(MapaFragment.CLAVE_NOMBRE_CENTRO, centroDao.selectCentroById(((BuceoApplication) getApplicationContext()).getIdCentro()).getNombreCentro());
+        CentroFragment centroFragment = new CentroFragment();
+        centroFragment.setArguments(args);
+        getSupportFragmentManager().beginTransaction().replace(R.id.mapaFragment, centroFragment).commit();
 
     }
 

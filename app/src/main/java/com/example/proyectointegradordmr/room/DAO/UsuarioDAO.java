@@ -1,6 +1,7 @@
 package com.example.proyectointegradordmr.room.DAO;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -36,5 +37,8 @@ public interface UsuarioDAO {
     //CHECK
     @Query("SELECT * FROM USUARIOS")
     public List<Usuario> check();
+
+    @Delete
+    public void deleteUsuarios(List<Usuario> listaUsuarios);
 
 }

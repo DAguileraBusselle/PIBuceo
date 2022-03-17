@@ -55,7 +55,7 @@ public class uwu extends AppCompatActivity {
         listaResenias = (ArrayList<Resenia>) resenDao.selectAll();
 
         for (Usuario user : listaUsers) {
-            texto += user.getNombreUsuario() + " | " + user.getCorreo() + " | " + user.getPassword() + "\n";
+            texto +=  user.getId() + " " + user.getNombreUsuario() + " | " + user.getCorreo() + " | " + user.getPassword() + "\n";
         }
 
         texto += "\n************************************\n";
